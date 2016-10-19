@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
 
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
-    $result = mysqli_query($con, "SELECT * FROM users WHERE email = '" . $email. "' and password = '" . md5($password) . "'");
+    $result = mysqli_query($con, "SELECT * FROM users WHERE email = '" . $email. "' and password = '" . md5($password) . "'"); //md5 of password is stored instead of war string
 
     if ($row = mysqli_fetch_array($result)) {
         $_SESSION['usr_id'] = $row['id'];
@@ -33,7 +33,7 @@ if (isset($_POST['login'])) {
 </head>
 <body>
 
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation">  <!--for smaller screens like mobile-->
     <div class="container-fluid">
         <!-- add header -->
         <div class="navbar-header">
