@@ -36,7 +36,7 @@ if (isset($_POST['signup'])) {
     }
     if (!$error) {
         if(mysqli_query($con, "INSERT INTO users(name,email,password) VALUES('" . $name . "', '" . $email . "', '" . md5($password) . "')")) {
-            $successmsg = "Successfully Registered! <a href='login.php'>Click here to Login</a>";
+            $successmsg = "Successfully Registered! <a href='login.php'>Click here to Login</a>"; //md5 of password is stored instead of war string
         } else {
             $errormsg = "Error in registering...Please try again later!";
         }
